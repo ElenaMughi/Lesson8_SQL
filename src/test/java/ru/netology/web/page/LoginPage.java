@@ -13,17 +13,19 @@ public class LoginPage {
         return new VerificationPage();
     }
 
-    public void notValidLogin(DataInfo.AuthInfo authInfo) {
+    public DashboardPage notValidLogin(DataInfo.AuthInfo authInfo) {
         $("[data-test-id=login] input").setValue(authInfo.getLogin());
         $("[data-test-id=password] input").setValue("111");
         $("[data-test-id=action-login]").click();
+        return new DashboardPage();
     }
 
-    public void notValidTripleClickLogin(DataInfo.AuthInfo authInfo) {
+    public DashboardPage notValidTripleClickLogin(DataInfo.AuthInfo authInfo) {
         $("[data-test-id=login] input").setValue(authInfo.getLogin());
         $("[data-test-id=password] input").setValue("111");
         $("[data-test-id=action-login]").click();
         $("[data-test-id=action-login]").click();
         $("[data-test-id=action-login]").click();
+        return new DashboardPage();
     }
 }
