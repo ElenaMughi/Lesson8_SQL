@@ -9,14 +9,15 @@ public class DashboardPage {
 
     public boolean isPageVisible() {
 
-        boolean isVisible = $("data-test-id='dashboard']").shouldBe(Condition.visible).exists();
+        boolean isVisible = $("[data-test-id='dashboard']").shouldBe(Condition.visible).exists();
+ //       return $("[data-test-id='dashboard']").shouldBe(Condition.visible);
         return  isVisible;
 
     }
 
     public boolean isPageNotVisible() {
 
-        boolean isVisible = $("data-test-id='error-notification'").has(Condition.visible);
+        boolean isVisible = $("[data-test-id='error-notification']").shouldBe(Condition.visible).exists();
         return isVisible;
 
     }
